@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayush & Anuja Proposal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Sacramento', cursive;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 90%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #e91e63;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    .heart-animated {
+      width: 200px;
+      height: 180px;
+      background: red;
+      margin: 0 auto 20px;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: pulse 1.5s infinite;
+    }
+
+    .heart-animated::before,
+    .heart-animated::after {
+      content: "";
+      width: 200px;
+      height: 180px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart-animated::before {
+      top: -100px;
+      left: 0;
+    }
+
+    .heart-animated::after {
+      left: 100px;
+      top: 0;
+    }
+
+    .heart-text {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <h1>Hi Anuja 💕</h1>
+    <p>From the moment I saw you, I knew you were special.</p>
+    <button onclick="nextPage(2)">Next</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+    <h1>My Heart Speaks 💓</h1>
+    <p>Every heartbeat whispers your name. I can't imagine life without you.</p>
+    <button onclick="nextPage(3)">Next</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <h1>Will You Be Mine? 💍</h1>
+    <p>I love you deeply. Will you say yes and make me the happiest person alive?</p>
+    <img src="https://png.pngtree.com/png-clipart/20210308/original/pngtree-cartoon-couple-boy-proposing-to-girl-romantic-scene-png-image_5775576.jpg" alt="Girl proposing to boy">
+    <img src="https://png.pngtree.com/png-clipart/20190906/original/pngtree-cartoon-boy-proposing-to-girl-png-image_4572327.jpg" alt="Boy proposing to girl">
+    <button onclick="nextPage(4)">Say Yes</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page" id="page4">
+    <h1>Forever Yours 💖</h1>
+    <p>Ayush & Anuja — written in the heart forever.</p>
+    <div class="heart-animated">
+      <div class="heart-text">Ayush ❤️ Anuja</div>
+    </div>
+    <button onclick="nextPage(5)">Next</button>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="page" id="page5">
+    <h1>Our Journey Begins 🌈</h1>
+    <p>This is just the beginning of a beautiful forever. I’m yours, always.</p>
+    <div class="heart-animated">
+      <div class="heart-text">Ayush ❤️ Anuja</div>
+    </div>
+    <button onclick="alert('Love locked forever 💘')">Celebrate</button>
+  </div>
+
+  <script>
+    function nextPage(pageNumber) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + pageNumber).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
